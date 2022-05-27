@@ -1,0 +1,35 @@
+@use "../utils";
+
+@use "card";
+
+.service {
+  &__wrapper {
+    padding: 2rem;
+    border: 4px solid salmon;
+  }
+  &__title {
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    color: orange;
+  }
+  &__body {
+    @include utils.respond(768px) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    > div {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+        @include utils.respond(768px) {
+          margin-bottom: 0;
+        }
+      }
+      @include utils.respond(768px) {
+        width: calc((100% - 48px) / 2);
+      }
+    }
+  }
+}

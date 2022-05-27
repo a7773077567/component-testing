@@ -1,0 +1,23 @@
+@use "../utils";
+
+.button {
+  width: 100%;
+  border: 0;
+  padding: 1rem 0;
+  font-size: 2em;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  cursor: pointer;
+  &--blue {
+    @include utils.button-color(blue);
+  }
+  &--red {
+    @include utils.button-color(red);
+  }
+  &--green {
+    @include utils.button-color(green);
+  }
+  &--yellow {
+    @include utils.button-color(yellow);
+  }
+}
